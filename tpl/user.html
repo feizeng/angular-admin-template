@@ -1,0 +1,23 @@
+<fieldset class="layui-elem-field layui-field-title" ng-init="dateinit()">
+  <legend>时间控件demo</legend>
+</fieldset>
+<div class="layui-inline">
+  <input class="layui-input" placeholder="自定义日期格式" onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD'})">
+</div>
+<div class="layui-inline">
+  <input class="layui-input" placeholder="开启节日" onclick="layui.laydate({elem: this, festival: true})">
+</div>
+<div class="layui-inline">
+  <input class="layui-input" placeholder="只能选昨天到明天" onclick="layui.laydate({elem: this, min: laydate.now(-1), max: laydate.now(+1)})">
+</div>
+<div class="layui-form-pane" style="margin-top: 15px;">
+  <div class="layui-form-item">
+    <label class="layui-form-label">范围选择</label>
+    <div class="layui-input-inline">
+      <input class="layui-input" placeholder="开始日" id="LAY_demorange_s">
+    </div>
+    <div class="layui-input-inline">
+      <input class="layui-input" placeholder="截止日" id="LAY_demorange_e">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+  <!-- navbar -->
+  <div data-ng-include=" 'tpl/header.html' " class="layui-header header header-demo">
+  </div>
+  <!-- / navbar -->
+
+  <!-- menu -->
+  <div data-ng-include=" 'tpl/left.html' " class="layui-side layui-bg-black">
+  </div>
+
+  <!-- content -->
+  <div class="layui-body site-demo fade-in-up" ui-view>
+    <div class="padding fade-in-up">
+      <fieldset class="layui-elem-field layui-field-title">
+        <legend><a href="./">返回首页</a></legend>
+      </fieldset>
+      <blockquote class="layui-elem-quote">这个貌似不用多介绍，因为你已经在太多的地方都看到</blockquote>
+    </div>
+  </div>
+  <!-- /content -->
+  <!--footer-->
+  <div data-ng-include=" 'tpl/footer.html' " class="layui-footer footer footer-demo"></div>
+  <div class="site-tree-mobile layui-hide">
+    <i class="layui-icon"></i>
+  </div>
+  <div class="site-mobile-shade"></div>

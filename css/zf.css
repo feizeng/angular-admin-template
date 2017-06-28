@@ -1,0 +1,7 @@
+.padding{
+	padding:20px;
+}
+.fade-in-up.ng-enter {
+	-webkit-animation: fadeInUp 0.5s;
+	animation: fadeInUp 0.5s;
+}
