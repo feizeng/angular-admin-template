@@ -1,4 +1,4 @@
-app.controller('AppCtrl',function($scope, $rootScope, $http, $location,$cacheFactory){
+app.controller('AppCtrl',function($scope, $rootScope, $http, $location,$cacheFactory,$state,tabledata){
 	$rootScope.$on('$routeChangeStart', function(){
 	    $rootScope.loading = true;
 	});
@@ -55,39 +55,17 @@ app.controller('AppCtrl',function($scope, $rootScope, $http, $location,$cacheFac
 			};
 			document.getElementById('LAY_demorange_s').onclick = function(){
 				var start_max = $("#LAY_demorange_e").val();
-				console.log(start_max);
 			    start.elem = this;
 			    start.max = start_max;
 			    laydate(start);
 			}
 			document.getElementById('LAY_demorange_e').onclick = function(){
 				var end_min = $("#LAY_demorange_s").val();
-				console.log(end_min);
 			    end.elem = this;
 			    end.min = end_min;
 			    laydate(end);
 			}
 		});
 	}
-	$scope.tableinit = function(){
-		var callback = function(data){
-			var child = $(data.elem).parents('table').find('tbody input[type="checkbox"]');
-		    child.each(function(index, item){
-		      item.checked = data.elem.checked;
-		    });
-		    form.render('checkbox');
-		}
-		if(form){
-			form.render();
-			form.on('checkbox(allChoose)',function(data){
-				callback(data);
-			})
-		}else{
-			layui.use('form',function(){
-				layui.form().on('checkbox(allChoose)', function(data){
-					callback(data);
-				})
-			})
-		}
-	}
+	$scope.tbdate = tabledata.data;
 });
