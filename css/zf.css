@@ -5,3 +5,15 @@
 	-webkit-animation: fadeInUp 0.5s;
 	animation: fadeInUp 0.5s;
 }
+.floatleft{
+	float: left;
+}
+.lis a{
+	line-height: 42px;
+}
+.lis:after{
+	content: ' \0020';
+	display: block;
+	clear: both;
+	height: 0;
+}

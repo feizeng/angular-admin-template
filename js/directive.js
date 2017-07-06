@@ -37,3 +37,15 @@ app.directive("tableinit",function(){
 		}
 	};
 })
+app.directive("uploadinit",function(){
+	return{
+		restrict : "A",
+		link:function(scope, element, attrs){
+			upload({
+				swf:"/layui/js/Uploader.swf",
+				server:"/layui/server/fileupload.php",
+				auto:false
+			})
+		}
+	};
+})

@@ -22,7 +22,7 @@
 	        templateUrl: 'tpl/button.html'
 	    })
 	    .state('home.user', {
-	        url: '/base',
+	        url: '/user',
 	        template: '<div class="padding fade-in-up" ui-view></div>'
 	    })
 	    .state('home.user.index', {
@@ -34,7 +34,15 @@
 	        template: '<div class="padding fade-in-up" ui-view></div>'
 	    })
 	    .state('home.table.index', {
-	        url: '/userIndex',
+	        url: '/tableIndex',
 	        templateUrl: 'tpl/table.html'
+	    })
+	    .state('home.upload', {
+	        url: '/upload',
+	        template: '<div class="padding fade-in-up" ui-view></div>'
+	    })
+	    .state('home.upload.index', {
+	        url: '/uploadIndex',
+	        templateUrl: 'tpl/upload.html'
 	    })
 })
