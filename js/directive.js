@@ -49,3 +49,37 @@ app.directive("uploadinit",function(){
 		}
 	};
 })
+app.directive("pageinit",function(){
+	return{
+		restrict : "A",
+		link:function(scope, element, attrs){
+			layui.use("laypage",function(){
+				layui.laypage({
+				    cont: 'pageDemo' //分页容器的id
+				    ,pages: 100 //总页数
+				    ,skin: '#5FB878' //自定义选中色值
+				    //,skip: true //开启跳页
+				    ,jump: function(obj, first){
+				      if(!first){
+				        layer.msg('第'+ obj.curr +'页');
+				      }
+				    }
+				})
+			})
+		}
+	};
+})
+app.directive("tabinit",function(){
+	return{
+		restrict : "A",
+		link:function(scope, element, attrs){
+			layui.use(['form', 'element'],function(){
+				el = layui.element();
+				el.on('tab(demo)',function(data){
+					layer.msg('切换了：'+ this.innerHTML);
+    				console.log(data);
+				})
+			})
+		}
+	};
+})
