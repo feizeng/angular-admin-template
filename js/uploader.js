@@ -92,10 +92,10 @@ function upload(options){
     // 文件上传过程中创建进度条实时显示。
     uploader.on( 'uploadProgress', function( file, percentage ) {
         var $li = $( '#'+file.id ),
-            $percent = $li.find('.progress .progress-bar');
+            $percent = $li.find('.layui-progress .layui-progress-bar');
         // 避免重复创建
         if ( !$percent.length ) {
-            $percent = $('<div class="progress progress-striped" role="progressbar"><div class="progress-bar progress-bar-success"></div></div>')
+            $percent = $('<div class="layui-progress"><div class="layui-progress-bar" lay-percent="0%"></div></div>')
                     .appendTo( $li )
                     .find('span');
         };
@@ -132,7 +132,7 @@ function upload(options){
     // 文件上传失败，显示上传出错。
     uploader.on( 'uploadError', function( file ) {
         var $li = $( '#'+file.id ),
-            $percent = $li.find('.progress .progress-bar'),
+            $percent = $li.find('.layui-progress .layui-progress-bar'),
             $error = $li.find('div.error');
         // 避免重复创建
         if ( !$error.length ) {
@@ -144,7 +144,7 @@ function upload(options){
     // 完成上传完了，成功或者失败，先删除进度条。
     uploader.on( 'uploadComplete', function( file ) {
         setTimeout(function(){
-            $( '#'+file.id ).find('.progress').remove();
+            $( '#'+file.id ).find('.layui-progress').remove();
         },1000)
     });
     //绑定uploader事件
@@ -221,5 +221,4 @@ function delePic(obj,auto,idObj){
         })
         $this.parent().remove();
     }
-    
 }

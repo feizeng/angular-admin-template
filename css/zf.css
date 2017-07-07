@@ -17,3 +17,6 @@
 	clear: both;
 	height: 0;
 }
+.file-item{
+	float: left;
+}
