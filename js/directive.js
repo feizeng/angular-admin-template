@@ -3,6 +3,10 @@ app.directive("leftrender", function() {
         restrict : "C",
         link: function(scope, element, attrs) {
         	var url = location.hash;
+        	var el;
+        	layui.use(['layer','element'], function(){
+				el = layui.element();
+			});
          	$("a[href='"+url+"']").parent("dd").addClass('layui-this');
 			//手机设备的简单适配
 		    var treeMobile = $('.site-tree-mobile'),shadeMobile = $('.site-mobile-shade');

@@ -9,8 +9,8 @@ app.controller('AppCtrl',function($scope, $rootScope, $http, $location,$cacheFac
 	$scope.ad = '管理首页';
 	var layer,form,el;
 	$scope.apprun = function(){
-		layui.use(['layer','form', 'element'], function(){
-			layer = layui.layer,form = layui.form(),el = layui.element();
+		layui.use(['layer','form'], function(){
+			layer = layui.layer,form = layui.form(),
 			layer.msg('Hello World');
 		});
 	}
