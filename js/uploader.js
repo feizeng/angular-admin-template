@@ -149,28 +149,30 @@ function upload(options){
     });
     //绑定uploader事件
     for(var i = 0;i<$('.uploadone').length;i++){
-    	(function(i){$("#oneUp"+ i).on('click',function(){
-			if ( state === 'uploading' ) {
-	            uploader.stop();
-	        }else {
-	            if(filesList[i] != undefined){
-	                uploader.upload(filesList[i]);
-	                filesList[i] = undefined;
-	            }
-	        }
-		})})(i);
-    	uploader.addButton({
-            id: '#oneChose'+i,
-            innerHTML: '选择文件'
-        });
-        //单图文件选择按钮事件绑定
-    	$("#oneChose"+i).on('mouseup',function(){
-    		$list = $(this).parents(".lis").siblings(".lis").find(".uploader-list");
-            $upbtn = $(this);
-            if(filesList[i] != undefined){
-                uploader.removeFile(filesList[i])
-            }
-    	})
+    	(function(i){
+            $("#oneUp"+ i).on('click',function(){
+    			if ( state === 'uploading' ) {
+    	            uploader.stop();
+    	        }else {
+    	            if(filesList[i] != undefined){
+    	                uploader.upload(filesList[i]);
+    	                filesList[i] = undefined;
+    	            }
+    	        }
+		    });
+            uploader.addButton({
+                id: '#oneChose'+i,
+                innerHTML: '选择文件'
+            });
+            //单图文件选择按钮事件绑定
+            $("#oneChose"+i).on('mouseup',function(){
+                $list = $(this).parents(".lis").siblings(".lis").find(".uploader-list");
+                $upbtn = $(this);
+                if(filesList[i] != undefined){
+                    uploader.removeFile(filesList[i])
+                }
+            })
+        })(i);
     }
     $('.uploadmore').each(function(i){
         //多图上传按钮事件绑定
